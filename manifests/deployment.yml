@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ajayupdazurevotingappredis 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ajayupdazurevotingappredis
+  template:
+    metadata:
+      labels:
+        app: ajayupdazurevotingappredis 
+    spec:
+      containers:
+        - name: ajayupdazurevotingappredis 
+          image: nbhcontainerregistry.azurecr.io/ajayupdazurevotingappredis
+          ports:
+          - containerPort: 8080
